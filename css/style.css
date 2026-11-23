@@ -1,0 +1,225 @@
+
+:root {
+    --bg-dark: #03080e;
+    --text-main: #ffffff;
+    --text-muted: #b0bec5;
+    --accent-glow: rgba(255, 255, 255, 0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Плавный скролл по якорным ссылкам */
+}
+
+body {
+    background-color: var(--bg-dark);
+    font-family: 'Inter', Arial, sans-serif;
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+
+.first-screen {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: radial-gradient(ellipse at bottom, #0b192c 0%, #020408 100%);
+    overflow: hidden;
+}
+
+/* Генерация плотного двухслойного звездного фона */
+.stars-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Слой 1: Яркие крупные звезды с легким размытием (ореолом) */
+    background-image: 
+        radial-gradient(2px 2px at 45px 75px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2.5px 2.5px at 180px 260px, rgba(255,255,255,0.9), rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 310px 95px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 490px 380px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(3px 3px at 670px 120px, rgba(255,255,255,0.85), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 840px 310px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2.5px 2.5px at 980px 180px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 120px 440px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 560px 520px, rgba(255,255,255,0.9), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 890px 490px, #ffffff, rgba(0,0,0,0));
+    background-size: 1100px 600px;
+    opacity: 0.85;
+    pointer-events: none;
+    animation: twinkle 6s infinite alternate ease-in-out;
+}
+
+/* Слой 2: Мелкая звездная пыль (делает небо глубоким) */
+.stars-bg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(1px 1px at 25px 40px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 90px 150px, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 160px 80px, rgba(255,255,255,0.9), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 240px 210px, rgba(255,255,255,0.7), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 330px 30px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 410px 175px, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 475px 65px, rgba(255,255,255,0.9), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 550px 240px, rgba(255,255,255,0.7), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 630px 110px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 710px 280px, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 790px 50px, rgba(255,255,255,0.9), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 860px 190px, rgba(255,255,255,0.7), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 940px 260px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 60px 310px, rgba(255,255,255,0.7), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 370px 290px, rgba(255,255,255,0.8), rgba(0,0,0,0));
+    background-size: 1000px 350px;
+    opacity: 0.65;
+}
+
+/* Плавная анимация мерцания */
+@keyframes twinkle {
+    0% { opacity: 0.65; }
+    100% { opacity: 1; }
+}
+
+
+/* === ШАПКА (HEADER) === */
+.header {
+    position: relative;
+    z-index: 10;
+    padding: 28px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logotype {
+    display: flex;
+    align-items: baseline;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.logo-constellation {
+    margin: 0 2px -3px 3px;
+    filter: drop-shadow(0 0 6px var(--accent-glow));
+}
+
+
+.nav-bar {
+    display: flex;
+    gap: 36px;
+}
+
+.menu-link {
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.85);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.menu-link:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px var(--accent-glow);
+}
+
+/* === ГЛАВНЫЙ ЭКРАН (HERO) === */
+.hero {
+    position: relative;
+    z-index: 10;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 60px; /* Компенсация высоты шапки для идеального центра */
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-title {
+    font-size: clamp(48px, 8vw, 96px); /* Адаптивный крупный размер как в макете */
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+}
+
+.hero-subtitle {
+    font-size: clamp(18px, 2.5vw, 24px);
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.hero-desc {
+    max-width: 640px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+}
+
+/* Кнопка "Войти в атлас" */
+.button-primary {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 14px 36px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(4px);
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.button-primary:hover {
+    border-color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.arrow-down {
+    font-size: 14px;
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
+
+.button-primary:hover .arrow-down {
+    transform: translateY(3px);
+}
