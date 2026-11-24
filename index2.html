@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StellarMyth — Интерактивная карта ночного неба</title>
+   
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+<body>
+
+    <div class="first-screen">
+        <div class="stars-bg"></div>
+
+        <header class="header">
+            <div class="container header-container">
+                
+	<a href="#" class="logotype">
+    	<span>Stellar</span>
+    	<svg class="logo-constellation" width="38" height="28" viewBox="0 0 42 32" fill="none" xmlns="http://w3.org">Ы
+        	<path d="M4 26L12 10L21 20L30 8L38 26" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        	<circle cx="4" cy="26" r="2.5" fill="white"/>
+        	<circle cx="12" cy="10" r="3" fill="white"/>
+       		<circle cx="21" cy="20" r="2.2" fill="white"/>
+        	<circle cx="30" cy="8" r="3.2" fill="white"/>
+       	 <circle cx="38" cy="26" r="2.5" fill="white"/>
+    	</svg>
+    	<span>yth</span>
+	</a>
+
+                <nav class="nav-bar">
+                    <a href="#" class="menu-link">Главная</a>
+                    <a href="#atlas" class="menu-link">Атлас</a>
+                    <a href="#about" class="menu-link">О проекте</a>
+                </nav>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="container hero-container">
+                <h1 class="hero-title">StellarMyth</h1>
+                <h2 class="hero-subtitle">Интерактивная карта ночного неба.</h2>
+                <p class="hero-desc">
+                    Древние люди «читали» звёзды без телескопов — с помощью невооружённого глаза, памяти, подручных инструментов и наблюдений за горизонтом. Они использовали небо как календарь, компас и книгу мифов
+                </p>
+                <a href="#atlas" class="button-primary">
+                    <span>Войти в атлас</span>
+                    <span class="arrow-down">↓</span>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <main class="wrap">
+        <div class="stars-bg"></div>
+
+        <section id="atlas" class="stars-map">
+            <div class="container">
+                <div class="atlas-card">
+                    <div class="map-and-starlist">
+                        
+                        <aside class="sidebar">
+                            <div class="season-tabs" id="seasonTabs">
+                                <button class="season-btn" data-season="autumn">Осень</button>
+                                <button class="season-btn" data-season="winter">Зима</button>
+                                <button class="season-btn" data-season="spring">Весна</button>
+                                <button class="season-btn active" data-season="summer">Лето</button>
+                            </div>
+
+                            <div class="constellations-box">
+                                <h3 class="box-title">Созвездия</h3>
+                                <ul class="stars-list" id="constellationList">
+                                </ul>
+                            </div>
+                        </aside>
+
+                    <div class="sky-wrapper">
+                        <div id="starmap" style="width: 100%; height: 580px;"></div>
+                    </div>
+
+                    </div>
+                    <div class="myth-block">
+                        <h3 class="myth-title" id="mythTitle">Персей</h3>
+                        <p class="myth-text" id="mythText">
+                            Согласно мифам Андромеда – дочь Цефея и Кассиопеи. Она славилась своей красотой и вздорным характером...
+                        </p>
+                        <button class="button-outline" id="readMoreBtn">
+                            <span>Читать далее</span>
+                            <span class="arrow-right">→</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-us">
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">Подвал</div>
+    </footer>
+    <script src="js/virtualsky/stuquery.min.js"></script>
+    <script src="js/virtualsky/virtualsky.min.js"></script>
+    <script src="js/virtualsky/lines_latin.json"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
+</body>
+</html>
