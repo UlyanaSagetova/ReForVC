@@ -54,21 +54,13 @@
         </section>
     </div>
 
-    
-    <!-- ОСНОВНОЙ КОНТЕНТ -->
     <main class="wrap">
         <div class="stars-bg"></div>
-
-        <!-- СЕКЦИЯ АТЛАСА (COMMIT #2) -->
         <section id="atlas" class="stars-map">
             <div class="container">
                 <div class="atlas-card">
-                    <!-- Верхняя часть: Сайдбар со списком + Интерактивное небо -->
                     <div class="map-and-starlist">
-                        
-                        <!-- Левая светлая панель управления -->
                         <aside class="sidebar">
-                            <!-- Табы сезонов -->
                             <div class="season-tabs" id="seasonTabs">
                                 <button class="season-btn" data-season="autumn">Осень</button>
                                 <button class="season-btn" data-season="winter">Зима</button>
@@ -76,23 +68,19 @@
                                 <button class="season-btn active" data-season="summer">Лето</button>
                             </div>
 
-                            <!-- Белая карточка со списком созвездий -->
                             <div class="constellations-box">
                                 <h3 class="box-title">Созвездия</h3>
                                 <ul class="stars-list" id="constellationList">
-                                    <!-- Список генерируется динамически через JS -->
                                 </ul>
                             </div>
                         </aside>
 
-                <!-- Правая часть: Планетарий VirtualSky -->
                     <div class="sky-wrapper">
                         <div id="starmap" style="width: 100%; height: 700px;"></div>
                     </div>
 
                     </div>
 
-                    <!-- Нижняя часть: Описание мифа -->
                     <div class="myth-block">
                         <h3 class="myth-title" id="mythTitle">Персей</h3>
                         <p class="myth-text" id="mythText">
@@ -107,7 +95,6 @@
             </div>
         </section>
 
-        <!-- СЕКЦИЯ "О ПРОЕКТЕ" (COMMIT #3) -->
         <section id="about" class="about-us">
             <div class="container about-container">
                 <div class="about-text">
@@ -120,7 +107,6 @@
                     </p>
                 </div>
 
-                <!-- Правая часть: Полярная карта звёздного неба (как на макете) -->
                 <div class="about-visual">
                     <div id="about-starmap" style="width: 100%; height: 100%;"></div>
                 </div>
@@ -128,10 +114,8 @@
         </section>
     </main>
 
-    <!-- ПОДВАЛ САЙТА (FOOTER) -->
     <footer class="footer">
         <div class="container footer-container">
-            <!-- Колонка 1: Логотип -->
             <div class="footer-col footer-brand">
                 <a href="#" class="logotype">
                     <span>Stellar</span>
@@ -147,7 +131,6 @@
                 </a>
             </div>
 
-            <!-- Колонка 2: Навигация -->
             <nav class="footer-col footer-nav">
                 <a href="#" class="footer-link">Главная</a>
                 <a href="#atlas" class="footer-link">Атлас</a>
@@ -155,11 +138,9 @@
                 <a href="#about" class="footer-link">О проекте</a>
             </nav>
 
-            <!-- Колонка 3: Контакты и соцсети -->
             <div class="footer-col footer-contacts">
                 <h4 class="footer-heading">Контакты</h4>
                 <a href="tel:+79000000000" class="contact-phone">
-                    <!-- Иконка телефонной трубки -->
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                     </svg>
@@ -184,14 +165,9 @@
             </div>
         </div>
     </footer>
-
-
-    <!-- 1. Сначала вспомогательная библиотека -->
     <script src="js/virtualsky/stuquery.min.js"></script>
-    <!-- 2. Затем сам планетарий -->
     <script src="js/virtualsky/virtualsky.min.js"></script>
     <script src="js/virtualsky/lines_latin.json"></script>
-    <!-- 3. В конце твой файл с логикой сайта -->
     <script src="js/script.js"></script>
 </body>
 </html>
